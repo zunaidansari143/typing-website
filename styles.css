@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap");
+:root {
+  --bgColor: #333;
+  --textPrimary:#fff;
+  --textSecondary:#666;
+  --Primarycolor:#fd4;
+}
+
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Mono", monospace;
+}
+
+body{
+  font-family: "Roboto", sans-serif;
+  background-color: var(--bgColor);
+  color: var(--color);
+}
+
+.container h1{
+  color: var(--Primarycolor);
+}
+#header{
+  display: flex;
+  justify-content:space-between;
+  align-items: flex-start;
+  margin:20px 6px 12px;
+}
+#info{
+  color: var(--Primarycolor);
+}
+div.word{
+  display: inline-block;
+  text-align: justify;
+  font-family: "Roboto Mono", monospace;
+  margin:0 6px;
+  word-spacing: -8px;}
+div#game{
+  position: relative;
+  line-height: 25px;
+  height: 120px;
+  overflow:hidden;
+}
+.letter{
+
+}
+#words{
+  filter: blur(5px);
+  color: var(--textSecondary);
+}
+#game:focus #words{
+  filter: blur(0px);
+}
+
+#focus-error{
+  position:absolute;
+  inset: 0;
+  text-align: center;
+  padding-top: 35px;
+}
+#game:focus #focus-error{
+  display: none;
+}
+
+.letter.correct{
+  color: #fff;
+}
+.letter.incorrect{
+  color: #f55;
+}
+
+#cursor{
+  width: 2px ;
+  height:1.6rem;
+  background-color: var(--Primarycolor);
+  position: fixed;
+  top: 120px ;
+  left: 10px;
+  animation: blink .5s infinite;
+}
+@keyframes blink{
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+#game:focus #cursor{
+  display: block;
+}
